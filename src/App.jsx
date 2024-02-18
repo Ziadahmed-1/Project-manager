@@ -9,7 +9,7 @@ function App() {
   function saveToLS(value) {
     localStorage.setItem("projects", JSON.stringify(value));
   }
-  const intial = JSON.parse(localStorage.getItem("projects")).length
+  const intial = JSON.parse(localStorage.getItem("projects"))?.length
     ? JSON.parse(localStorage.getItem("projects"))
     : [
         {
