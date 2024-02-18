@@ -36,11 +36,14 @@ const ProjectShow = function ({ projects, setProjects, saveToLS }) {
     console.log(updatedProject, updatedProjectsArray);
   }, [tasks]);
 
-  function handelAddTask() {
+    function handelAddTask() {
     let newTask = task.current.value;
-    setTasks((prev) => [...prev, newTask]);
-    task.current.value = "";
+    if (newTask !== "") {
+      setTasks((prev) => [...prev, newTask]);
+      task.current.value = "";
+    }
   }
+
 
   useEffect(() => {
     setCurrentProject(projects.filter((object) => object.id == id));
